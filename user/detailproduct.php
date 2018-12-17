@@ -14,51 +14,7 @@
   </head>
   <body>
     <?php include 'header user.php'; ?>
-    <div class="modal" id="loginmodal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-tittle"> Login </h4>
-            <button class="close" data-dismiss="modal" >&times;</button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="TypeEmail"> Email </label>
-                <input class="form-control" placeholder="Login Email" type="text">
-              </div>
-              <div class="form-group">
-                <label for="TypePassword"> Password </label>
-                <input class="form-control" placeholder="Login Password" type="Password">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div class="txt1 text-center">
-            <span>
-              Or Sign In Using
-            </span>
-          </div>
-
-             <div class="flex-c-m">
-            <a href="#" class="login100-social-item bg1">
-              <i class="fa fa-facebook"></i>
-            </a>
-
-            <a href="#" class="login100-social-item bg2">
-              <i class="fa fa-twitter"></i>
-            </a>
-
-            <a href="#" class="login100-social-item bg3">
-              <i class="fa fa-google"></i>
-            </a>
-          </div>
-            <button class="btn btn-primary"> Login </button>
-            <button class="btn btn-primary" data-dissmiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 <?php
    $query="SELECT * from  produk";

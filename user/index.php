@@ -130,7 +130,7 @@
           <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="img/news.jpg" alt="First slide">
+            <img class="first-slide" src="../img/news.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-center">
 
@@ -148,26 +148,9 @@
             </div>
           </div>
 
-          
-    <div class="container marketing pt-3">
-        <h1 class="text-center">Sponsored</h1>
-        <br>
-          <div class="row">
-            <div class="col-lg-3">
-              <a href="#"><img src="img/gogreen.jpg" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="img/wwf.jpg" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="img/iso.png" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-             <a href="#"><img src="img/111.jpg" class="img-thumbnail img-responsive"></a>
-            </div>
-          </div>
-          <hr class="featurette-divider">
-        </div>
+        
+          <?php include 'sponsored.php'; ?>
+    
           <?php
             $query= mysqli_query($con,"SELECT * FROM map WHERE kd_map = 2");
             $data=mysqli_fetch_array($query) 

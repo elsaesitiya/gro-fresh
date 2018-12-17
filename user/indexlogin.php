@@ -8,13 +8,7 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Gro-Fresh</title>
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/carousel.css" rel="stylesheet">
-    <script src="assets/js/bootsrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/util.css">
+    <?php include 'head.php'; ?>
 
   </head>
   <body>
@@ -24,36 +18,18 @@
       <button type="button" class="btn btn-primary"> <a href="history payment.html" style="color: white; text-decoration: none;">History</a></button>
       <br>
       <br>
-      <a> <img src="user2.png"> Ray Reysandi </a><br><br> 
-      <a> <img src="email.png"> Rayreysandi@gmail.com </a><br><br>
-      <a> <img src="phone.png"> 08780217001 </a><br><br>
-      <a> <img src="house.png"> Minomartani </a><br>
+      <a> <img src="../img/user2.png"> Ray Reysandi </a><br><br> 
+      <a> <img src="../img/email.png"> Rayreysandi@gmail.com </a><br><br>
+      <a> <img src="../img/phone.png"> 08780217001 </a><br><br>
+      <a> <img src="../img/house.png"> Minomartani </a><br>
     </ul>
     <div class="gambar">
-        <img src="user.png">
+        <img src="../img/user.png">
       </div>
 
     <main role="main">
       
-    <div class="container marketing pt-3">
-        <h1 class="text-center">Sponsored</h1>
-        <br>
-          <div class="row">
-            <div class="col-lg-3">
-              <a href="#"><img src="img/gogreen.jpg" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="img/wwf.jpg" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="img/iso.png" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-             <a href="#"><img src="img/111.jpg" class="img-thumbnail img-responsive"></a>
-            </div>
-          </div>
-          <hr class="featurette-divider">
-        </div>
+    <?php include 'sponsored.php'; ?>
 
           <hr class="featurette-divider">
       

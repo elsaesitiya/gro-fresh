@@ -1,4 +1,4 @@
-<?php include 'system/koneksi.php' ?>
+<?php include '../system/koneksi.php' ?>
 <!doctype html>
 <html lang="en">
   <head>

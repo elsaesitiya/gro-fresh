@@ -6,9 +6,11 @@
       // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($con,$_POST['email']);
-      $mypassword = mysqli_real_escape_string($con,$_POST['password']); 
+      $mypassword = mysqli_real_escape_string($con,$_POST['password']);
+      $kd = mysqli_real_escape_string($con,$_POST['kd_pelanggan']); 
       
       $sql = "SELECT kd_pelanggan FROM pelanggan WHERE email = '$myusername' and password = '$mypassword'";
+      $kd_pel = "?kd_admin=<?php echo $record['kd_admin']"
       $result = mysqli_query($con,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
