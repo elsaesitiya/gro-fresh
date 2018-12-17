@@ -8,24 +8,24 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Product</a>
+              <a class="nav-link" href="productlist.php">Product</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="quality.html">Quality</a>
+              <a class="nav-link" href="../quality.php">Quality</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
+              <a class="nav-link" href="../CS Contact.php">Contact Us</a>
             </li>
           </ul>
              <div class="dropdown">
             USER - Ray Reysandi  
-          <button class="dropbtn"><img src="user2.png"></button>
+          <button class="dropbtn"><img src="../img/user2.png"></button>
           <div class="dropdown-content">
-            <a href="indexlogin.html"> Profile </a>
-            <a href="history payment.html"> History </a>
+            <a href="indexlogin.php"> Profile </a>
+            <a href="history payment.php"> History </a>
           </div>  
         </div>
       </nav>

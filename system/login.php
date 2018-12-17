@@ -20,12 +20,12 @@
       if($count == 1) {
         ?>
          <script> alert("Welcome"); 
-      window.location='../index.html';</script>
+      window.location='../user/index.php';</script>
          <?php
       }else {
          ?>
          <script> alert("Salah lur"); 
-      window.location='../index.html';</script>
+      window.location='../index.php';</script>
          <?php
       }
    }
