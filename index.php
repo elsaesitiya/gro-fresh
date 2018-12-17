@@ -16,44 +16,9 @@
     <script src="assets/js/bootsrap.js"></script>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light ">
-      <a class="navbar-brand p-0" href="#">
-       <img src="img/logofont.svg" width="150" height="auto" class="d-inline-block align-top" alt="">
-      </a>
-          <!--<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="productlist.php">Product</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="quality.html">Quality</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Cs Contact.html">Contact Us</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav navbar-right">
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" data-target="#signmodal" data-toggle="modal">Sign Up</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link">or</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" data-target="#loginmodal" data-toggle="modal">Login</a>
-            </li> 
-          </ul>  
-        </div>
-      </nav>
-    </header>
+
+  	<?php include 'header.php'; ?>
+    
     <div class="modal" id="signmodal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -327,53 +292,7 @@
             </div>
 
           <hr class="featurette-divider">
-      <footer id="myFooter" class="container-fluid p-2">
-       <div class="container-fluid p-2">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h5>Information</h5>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#" data-target="#loginmodal" data-toggle="modal">Log in</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h5>Customer Service</h5>
-                    <ul>
-                        <li><a href="#">Company Information</a></li>
-                        <li><a href="Cs Contact.html">Contact us</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h5>My Account</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help desk</a></li>
-                        <li><a href="#">Forums</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3 info">
-                    <h5>Why Choose Us?</h5>
-                    <p> Lorem ipsum dolor amet, consectetur adipiscing elit. Etiam consectetur aliquet aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
-                </div>
-            </div>
-        </div>
-        <div class="second-bar">
-           <div class="container">
-                <h2 class="logo"><a href="#"> <img src="img/logofont.svg" width="300" height="auto" class="d-inline-block align-top" alt=""> </a></h2>
-                <div class="social-icons">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                    <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2018 Gro-Fresh, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-                </div>
-            </div>
-        </div>
-        
-      </footer>
+          <?php include 'footer.php'; ?>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
