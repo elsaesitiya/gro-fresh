@@ -1,3 +1,4 @@
+<?php include '../system/koneksi.php'; ?> 
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,18 +16,22 @@
     <?php include 'header user.php'; ?>
       <ul class="profile">
         <?php
-          $query = mysqli_query($con, "Select * from pelanggan where kd_admin = '".$_GET['kd_admin']."'");
+          $query = mysqli_query($con, "Select * from pelanggan");
           while ($row = mysqli_fetch_array($query)) {
         ?>
-      <button type="button" class="btn btn-success" style="color: white" > <a href="indexeditprofile.html" style="color: white; text-decoration: none;"  >Edit Profile</a></button>
+      <button type="button" class="btn btn-success" style="color: white" > 
+        <a href="indexeditprofile.html" style="color: white; text-decoration: none;"  >Edit Profile</a></button>
       <button type="button" class="btn btn-primary"> <a href="history payment.html" style="color: white; text-decoration: none;">History</a></button>
       <br>
       <br>
-      <a> <img src="../img/user2.png"> Ray Reysandi </a><br><br> 
-      <a> <img src="../img/email.png"> Rayreysandi@gmail.com </a><br><br>
-      <a> <img src="../img/phone.png"> 08780217001 </a><br><br>
-      <a> <img src="../img/house.png"> Minomartani </a><br>
+      <a> <img src="../img/user2.png"> <?php echo $row['nama_pelanggan']; ?> </a><br><br> 
+      <a> <img src="../img/email.png"> <?php echo $row['email']; ?> </a><br><br>
+      <a> <img src="../img/phone.png"> <?php echo $row['no_tlp']; ?> </a><br><br>
+      <a> <img src="../img/house.png"> <?php echo $row['alamat']; ?> </a><br>
     </ul>
+    <?php 
+      } 
+    ?>
     <div class="gambar">
         <img src="../img/user.png">
       </div>
