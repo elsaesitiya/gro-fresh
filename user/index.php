@@ -1,4 +1,4 @@
-<?php include 'system/koneksi.php' ?>
+<?php include '../system/koneksi.php' ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,127 +9,12 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Gro-Fresh</title>
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/carousel.css" rel="stylesheet">
-    <script src="assets/js/bootsrap.js"></script>
+    <?php include 'head.php'; ?>
   </head>
   <body>
 
   	<?php include 'header user.php'; ?>
     
-    <div class="modal" id="signmodal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-tittle"> SignUp </h4>
-            <button class="close" data-dismiss="modal" >&times;</button>
-          </div>
-          <div class="modal-body">
-
-            <form id="daftar" method="POST" action="system/daftar.php">
-              <div class="form-group">
-                <label for="TypeEmail"> FullName </label>
-                <input id="nama_pelanggan" name="nama_pelanggan" class="form-control" placeholder="FullName" type="text">
-              </div>
-              <div class="form-group">
-                <label for="TypeEmail"> Email </label>
-                <input id="email" name="email" class="form-control" placeholder="Login Email" type="text">
-              </div>
-              <div class="form-group">
-                <label for="TypeEmail"> Alamat </label>
-                <input id="alamat" name="alamat" class="form-control" placeholder="alamat" type="text">
-              </div>
-              <div class="form-group">
-                <label for="TypePassword"> Password </label>
-                <input id="password" name="password" class="form-control" placeholder="Password" type="Password">
-              </div>
-              <div class="form-group">
-                <label for="TypePassword"> Phone Number </label>
-                <input id="no_tlp" name="no_tlp" class="form-control" placeholder="Phone Number" type="Number">
-              </div>
-              <div class="form-group">
-                <input id="submit" name="submit" class="form-control" type="submit">
-              </div>  
-            </form>
-
-          </div>
-          <div class="modal-footer">
-            <div class="txt1 text-center">
-            <span>
-              Or Sign In Using
-            </span>
-          </div>
-
-             <div class="flex-c-m">
-            <a href="#" class="login100-social-item bg1">
-              <i class="fa fa-facebook"></i>
-            </a>
-
-            <a href="#" class="login100-social-item bg2">
-              <i class="fa fa-twitter"></i>
-            </a>
-
-            <a href="#" class="login100-social-item bg3">
-              <i class="fa fa-google"></i>
-            </a>
-          </div>
-            <button class="btn btn-primary" > Login </button>
-            <button class="btn btn-primary" data-dissmiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="loginmodal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-tittle"> Login </h4>
-            <button class="close" data-dismiss="modal" >&times;</button>
-          </div>
-          <div class="modal-body">
-            <form action="system/login.php" method="POST">
-              <div class="form-group">
-                <label for="TypeEmail"> Email </label>
-                <input class="form-control" name="email" placeholder="Login Email" type="text">
-              </div>
-              <div class="form-group">
-                <label for="TypePassword"> Password </label>
-                <input class="form-control" name="password" placeholder="Login Password" type="Password">
-              </div>
-              <div class="form-group">
-                <input id="submit" name="submit" class="form-control" type="submit">
-              </div> 
-            </form>
-          </div>
-          <div class="modal-footer">
-            <div class="txt1 text-center">
-            <span>
-              Or Sign In Using
-            </span>
-          </div>
-
-             <div class="flex-c-m">
-            <a href="#" class="login100-social-item bg1">
-              <i class="fa fa-facebook"></i>
-            </a>
-
-            <a href="#" class="login100-social-item bg2">
-              <i class="fa fa-twitter"></i>
-            </a>
-
-            <a href="#" class="login100-social-item bg3">
-              <i class="fa fa-google"></i>
-            </a>
-          </div>
-            <button class="btn btn-primary"> Login </button>
-            <button class="btn btn-primary" data-dissmiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <main role="main">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -139,7 +24,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="img/header2.jpg" alt="First slide">
+            <img class="first-slide" src="../img/header2.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
                 <h1>From Earth</h1>
@@ -149,7 +34,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="img/header3.jpg" alt="Second slide">
+            <img class="second-slide" src="../img/header3.jpg" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Healty Family</h1>
@@ -159,7 +44,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="img/header1.jpg" alt="Third slide">
+            <img class="third-slide" src="../img/header1.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
                 <h1>One more for good measure.</h1>
