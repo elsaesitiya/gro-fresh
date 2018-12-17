@@ -14,6 +14,10 @@
   <body>
     <?php include 'header user.php'; ?>
       <ul class="profile">
+        <?php
+          $query = mysqli_query($con, "Select * from pelanggan where kd_admin = '".$_GET['kd_admin']."'");
+          while ($row = mysqli_fetch_array($query)) {
+        ?>
       <button type="button" class="btn btn-success" style="color: white" > <a href="indexeditprofile.html" style="color: white; text-decoration: none;"  >Edit Profile</a></button>
       <button type="button" class="btn btn-primary"> <a href="history payment.html" style="color: white; text-decoration: none;">History</a></button>
       <br>
