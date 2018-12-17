@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2018 at 02:36 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 5.6.37
+-- Generation Time: Dec 17, 2018 at 11:34 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gro_fresh`
+-- Database: `grofresh`
 --
 
 -- --------------------------------------------------------
@@ -100,6 +100,25 @@ CREATE TABLE `login` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `map`
+--
+
+CREATE TABLE `map` (
+  `kd_map` int(11) NOT NULL,
+  `isi_map` varchar(60) NOT NULL,
+  `latlong` varchar(600) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `map`
+--
+
+INSERT INTO `map` (`kd_map`, `isi_map`, `latlong`) VALUES
+(2, 'kantor', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.4283215801947!2d110.40533841426341!3d-7.744310078919812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59723ad890bd%3A0xc2c1f341eb8a5539!2sMushola+Al-Muttaqin!5e0!3m2!1sid!2sid!4v1530100295811');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pelanggan`
 --
 
@@ -120,7 +139,8 @@ INSERT INTO `pelanggan` (`kd_pelanggan`, `nama_pelanggan`, `email`, `alamat`, `p
 (1, 'fa', 'wad', 'awdawd', '123', '1213'),
 (2, 'FAISHAL ARIF WIBOWO', 'qweqwe', 'qweqwe', 'wqe', '123'),
 (3, 'ewr', 'ewr', 'ewr', '123', '123213'),
-(4, 'tes', 'qs', 'qs', 'qst', '123');
+(4, 'tes', 'qs', 'qs', 'qst', '123'),
+(5, 'rino', 'rinoalvian20@gmail.com', 'mgl', 'mgl', '0000');
 
 -- --------------------------------------------------------
 
@@ -288,6 +308,12 @@ ALTER TABLE `login`
   ADD KEY `kd_pelanggan` (`kd_pelanggan`);
 
 --
+-- Indexes for table `map`
+--
+ALTER TABLE `map`
+  ADD PRIMARY KEY (`kd_map`);
+
+--
 -- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
@@ -359,10 +385,16 @@ ALTER TABLE `transaksi`
 --
 
 --
+-- AUTO_INCREMENT for table `map`
+--
+ALTER TABLE `map`
+  MODIFY `kd_map` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `kd_pelanggan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `kd_pelanggan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
