@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","gro_fresh");
+$con = mysqli_connect("localhost","root","","grofresh");
 
 // Check connection
 if (mysqli_connect_errno())
