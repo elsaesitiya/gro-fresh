@@ -7,10 +7,8 @@
       
       $myusername = mysqli_real_escape_string($con,$_POST['email']);
       $mypassword = mysqli_real_escape_string($con,$_POST['password']);
-      $kd = mysqli_real_escape_string($con,$_POST['kd_pelanggan']); 
       
       $sql = "SELECT kd_pelanggan FROM pelanggan WHERE email = '$myusername' and password = '$mypassword'";
-      $kd_pel = "?kd_admin=<?php echo $record['kd_admin']"
       $result = mysqli_query($con,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
@@ -21,13 +19,13 @@
 		
       if($count == 1) {
         ?>
-         <script> alert("Welcome"); 
-      window.location='../user/index.php';</script>
+            <script> alert("Welcome"); 
+         window.location='../user/index.php';</script>
          <?php
       }else {
          ?>
-         <script> alert("Salah lur"); 
-      window.location='../index.php';</script>
+            <script> alert("Salah lur"); 
+         window.location='../index.php';</script>
          <?php
       }
    }

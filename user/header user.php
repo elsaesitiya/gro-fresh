@@ -22,7 +22,7 @@
             </li>
           </ul>
 <?php
-   $query = mysqli_query($con,"SELECT * FROM pelanggan where kd_pelanggan = '".$_GET['kd_pelanggan']."'");
+   $query = mysqli_query($con,"SELECT * FROM pelanggan");
    $record = mysqli_fetch_array($query);
    
    ?>
