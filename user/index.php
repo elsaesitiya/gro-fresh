@@ -67,13 +67,13 @@
       <div class="container-fluid marketing">
         <div class="row">
           <div class="col-lg-4">
-            <a href="howtoorder.html"><span class="label label-default"><h4 class="center">How to Order</h4></span></a>
+            <a href="../howtoorder.php"><span class="label label-default"><h4 class="center">How to Order</h4></span></a>
           </div>
           <div class="col-lg-4">
-            <a href="shipping.html"><span class="label label-default"><h4 class="center">Shipping</h4></span></a>
+            <a href="../shipping.php"><span class="label label-default"><h4 class="center">Shipping</h4></span></a>
           </div>
           <div class="col-lg-4">
-            <a href="guerentee.html"><span class="label label-default"><h4 class="center">Guarantee</h4></span></a>
+            <a href="../guerentee.php"><span class="label label-default"><h4 class="center">Guarantee</h4></span></a>
           </div>
         </div>
         <hr class="featurette-divider">
