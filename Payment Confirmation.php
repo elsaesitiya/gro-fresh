@@ -16,7 +16,7 @@
 
   </head>
   <body>
-    <?php include 'header user.php'; ?>
+    <?php include 'header.php'; ?>
 
 <div class="container">
   <div class="row">
@@ -26,55 +26,43 @@
       <div class="col-sm-7">
         <div class="p-3 bg-light text-dark">
       
-        <form>
+        <form action="" method="post">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
+      <input type="text" class="form-control" placeholder="First name" name="firstname">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
+      <input type="text" class="form-control" placeholder="Last name" name="lastname">
     </div>
   </div>
-</form>
-
-<form>
   <div class="form-group">
     <label for="formGroupExampleInput"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Phone Number">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Phone Number" name="phonenumber">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Province">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Province" name="province">
   </div>
-</form>
-
-<form>
   <div class="form-group">
     <label for="formGroupExampleInput"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City" name="city">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Districts">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Districts" name="districts">
   </div>
-</form>
-
 <div class="form-group">
     <label for="formGroupExampleInput2"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Zip Code">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Zip Code" name="zipcode">
   </div>
-</form>
-
 <div class="form-group">
     <label for="exampleFormControlTextarea1"></label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Address" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Address" rows="3" name="address"></textarea>
   </div>
 </form>
 <div class="p-3 bg-light text-dark"><button type="button" class="btn btn-danger">SAVE</button></div>
                   
-        </div>
-
-
+</div>
       </div>
       <div class="col-sm-5">
         <div class="p-3 bg-light text-dark">

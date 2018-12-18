@@ -136,7 +136,7 @@ require_once('system/koneksi.php')
 
   </tbody>
 </table>
-          <div class="p-3 bg-light text-dark"><button type="button" class="btn btn-danger"> <a href="Payment Confirmation.html" style="text-decoration: none; color: white;" >PAYMENT</a></button></div>
+          <div class="p-3 bg-light text-dark"><button type="button" class="btn btn-danger"> <a href="Payment Confirmation.php" style="text-decoration: none; color: white;" >PAYMENT</a></button></div>
       </div>
   </div>
 </div>
