@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 03:41 AM
+-- Generation Time: Dec 18, 2018 at 11:40 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -73,7 +73,12 @@ CREATE TABLE `contact_us` (
 
 INSERT INTO `contact_us` (`ID`, `Name`, `Email`, `Subject`, `Messages`) VALUES
 (1, 'rino', 'rino@gmail.com', 'coba', ''),
-(2, 'rino', 'rino@gmail.com', 'abc', 'asd');
+(2, 'rino', 'rino@gmail.com', 'abc', 'asd'),
+(3, '', '', '', ''),
+(4, 'rino', 'awd@gmail.com', 'awd', 'awd'),
+(5, 'rino1', 'awd@gmail.com', 'asdasd', 'asdasd'),
+(6, 'rino1', 'rinoalvian@gmail.com', 'coba', 'coba'),
+(7, 'a', 'awd@gmail.com', 'a', 'a');
 
 -- --------------------------------------------------------
 
@@ -137,6 +142,30 @@ CREATE TABLE `map` (
 
 INSERT INTO `map` (`kd_map`, `isi_map`, `latlong`) VALUES
 (2, 'kantor', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.4283215801947!2d110.40533841426341!3d-7.744310078919812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59723ad890bd%3A0xc2c1f341eb8a5539!2sMushola+Al-Muttaqin!5e0!3m2!1sid!2sid!4v1530100295811');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `kd_payment` int(100) NOT NULL,
+  `firstname` varchar(20) NOT NULL,
+  `lastname` varchar(14) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `city` varchar(20) NOT NULL,
+  `district` varchar(20) NOT NULL,
+  `zipcode` int(10) NOT NULL,
+  `address` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`kd_payment`, `firstname`, `lastname`, `province`, `city`, `district`, `zipcode`, `address`) VALUES
+(1, 'a', 'a', 'mgl', 'ff', 'ff', 0, 'ff');
 
 -- --------------------------------------------------------
 
@@ -342,6 +371,12 @@ ALTER TABLE `map`
   ADD PRIMARY KEY (`kd_map`);
 
 --
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`kd_payment`);
+
+--
 -- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
@@ -416,13 +451,19 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `map`
 --
 ALTER TABLE `map`
   MODIFY `kd_map` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `kd_payment` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
