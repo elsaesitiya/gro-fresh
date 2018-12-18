@@ -26,34 +26,32 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th scope="col">Kode</th>
-                  <th scope="col">Nama</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th scope="col">Alamat</th>
-                  <th scope="col">Password</th>
-                  <th scope="col">Phone</th>
+                  <th scope="col">Subject</th>
+                  <th scope="col">Message</th>
                   <th colspan="2" scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                   $query = mysqli_query($con,"SELECT * FROM pelanggan");
+                   $query = mysqli_query($con,"SELECT * FROM contact_us");
                    while ($record = mysqli_fetch_array($query)) {
                 ?>
                 <tr>
-                  <th scope="row"><?php echo $record['kd_pelanggan']; ?></th>
-                  <td><?php echo $record['nama_pelanggan']; ?></td>
-                  <td><?php echo $record['email']; ?></td>
-                  <td>@<?php echo $record['alamat']; ?></td>
-                  <td><?php echo $record['password']; ?></td>
-                  <td><?php echo $record['no_tlp']; ?></td>
+                  <th scope="row"><?php echo $record['ID']; ?></th>
+                  <td><?php echo $record['Name']; ?></td>
+                  <td><?php echo $record['Email']; ?></td>
+                  <td>@<?php echo $record['Subject']; ?></td>
+                  <td><?php echo $record['Messages']; ?></td>
                   <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-edit"></i></a></td>
                   <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <?php } ?>
               </tbody>
             </table>
-            <button type="button-right" class="btn btn-primary">Add Product</button>
+            
           </div>
 
           
