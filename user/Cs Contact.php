@@ -1,5 +1,10 @@
 <?php 
-require_once('../system/koneksi.php');
+session_start();
+if (!isset($_SESSION['email'])){
+include '../system/koneksi.php';
+
+} 
+
 ?>
 
 <!doctype html>
