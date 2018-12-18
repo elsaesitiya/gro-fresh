@@ -21,39 +21,71 @@ require_once('system/koneksi.php');
 
   </head>
   <body style="background-image: url(img/abu2.jpg)">
-    <header>
-      <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-        <a class="navbar-brand" href="index.html"><img src="img/logofont.svg" width="150" height="auto" class="d-inline-block align-top" alt=""></a>
-          <!--<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="productlist.html">Product</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="quality.html">Quality</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Cs Contact.html">Contact Us</a>
-            </li>
-          </ul>
+   <?php include 'header.php'; ?>
+
+   <div class="modal" id="signmodal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-tittle"> SignUp </h4>
+            <button class="close" data-dismiss="modal" >&times;</button>
+          </div>
+          <div class="modal-body">
+
+            <form id="daftar" method="POST" action="system/daftar.php">
+              <div class="form-group">
+                <label for="TypeEmail"> FullName </label>
+                <input id="nama_pelanggan" name="nama_pelanggan" class="form-control" placeholder="FullName" type="text">
+              </div>
+              <div class="form-group">
+                <label for="TypeEmail"> Email </label>
+                <input id="email" name="email" class="form-control" placeholder="Login Email" type="text">
+              </div>
+              <div class="form-group">
+                <label for="TypeEmail"> Alamat </label>
+                <input id="alamat" name="alamat" class="form-control" placeholder="alamat" type="text">
+              </div>
+              <div class="form-group">
+                <label for="TypePassword"> Password </label>
+                <input id="password" name="password" class="form-control" placeholder="Password" type="Password">
+              </div>
+              <div class="form-group">
+                <label for="TypePassword"> Phone Number </label>
+                <input id="no_tlp" name="no_tlp" class="form-control" placeholder="Phone Number" type="Number">
+              </div>
+              <div class="form-group">
+                <input id="submit" name="submit" class="form-control" type="submit">
+              </div>  
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <div class="txt1 text-center">
+            <span>
+              Or Sign In Using
+            </span>
+          </div>
+
+             <div class="flex-c-m">
+            <a href="#" class="login100-social-item bg1">
+              <i class="fa fa-facebook"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg2">
+              <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg3">
+              <i class="fa fa-google"></i>
+            </a>
+          </div>
+            <button class="btn btn-primary" > Login </button>
+            <button class="btn btn-primary" data-dissmiss="modal">Close</button>
+          </div>
         </div>
-        <div class="dropdown">
-            Ray Reysandi  
-          <button class="dropbtn"><img src="user2.png"></button>
-          <div class="dropdown-content">
-            <a href="indexlogin.html"> Profile </a>
-            <a href="history payment.html"> History </a>
-          </div>  
-        </div>
-      </nav>
-    </header>
+      </div>
+    </div>
+
     <div class="modal" id="loginmodal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -62,15 +94,18 @@ require_once('system/koneksi.php');
             <button class="close" data-dismiss="modal" >&times;</button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="system/login.php" method="POST">
               <div class="form-group">
                 <label for="TypeEmail"> Email </label>
-                <input class="form-control" placeholder="Login Email" type="text">
+                <input class="form-control" name="email" placeholder="Login Email" type="text">
               </div>
               <div class="form-group">
                 <label for="TypePassword"> Password </label>
-                <input class="form-control" placeholder="Login Password" type="Password">
+                <input class="form-control" name="password" placeholder="Login Password" type="Password">
               </div>
+              <div class="form-group">
+                <input id="submit" name="submit" class="form-control" type="submit">
+              </div> 
             </form>
           </div>
           <div class="modal-footer">
@@ -98,7 +133,8 @@ require_once('system/koneksi.php');
           </div>
         </div>
       </div>
-    </div>
+    </div> 
+    
     <script src="assets/js/bootstrap.js"></script>
               <script>
               new WOW().init();
@@ -135,9 +171,12 @@ require_once('system/koneksi.php');
               <textarea class="form-control" name="Messages" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center" style="margin-bottom: 100px;"><button type="submit" name="submit" class="btn btn-light">Send Message</button></div>
+            <div class="text-center" style="margin-bottom: 100px;"><button data-target="#loginmodal" data-toggle="modal" class="btn btn-light">Send Message</button></div>
           </form>
         </div>
+
+
+
 
         <?php
  if(isset($_POST['submit'])) {

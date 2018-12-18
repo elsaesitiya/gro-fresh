@@ -1,3 +1,7 @@
+<?php 
+require_once('../system/koneksi.php');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,14 +12,58 @@
 
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Gro-Fresh | Contact Us </title>
+    <title>Contact Us </title>
     <?php include 'head.php'; ?>
 
   </head>
-  <body style="background-image: url(../img/abu2.jpg)">
-    <?php include 'header user.php'; ?>
-    
-    <script src="../assets/js/bootstrap.js"></script>
+  <body style="background-image: url(img/abu2.jpg)">
+   <?php include 'header user.php'; ?>
+    <div class="modal" id="loginmodal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-tittle"> Login </h4>
+            <button class="close" data-dismiss="modal" >&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="TypeEmail"> Email </label>
+                <input class="form-control" placeholder="Login Email" type="text">
+              </div>
+              <div class="form-group">
+                <label for="TypePassword"> Password </label>
+                <input class="form-control" placeholder="Login Password" type="Password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="txt1 text-center">
+            <span>
+              Or Sign In Using
+            </span>
+          </div>
+
+             <div class="flex-c-m">
+            <a href="#" class="login100-social-item bg1">
+              <i class="fa fa-facebook"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg2">
+              <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="#" class="login100-social-item bg3">
+              <i class="fa fa-google"></i>
+            </a>
+          </div>
+            <button class="btn btn-primary"> Login </button>
+            <button class="btn btn-primary" data-dissmiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/bootstrap.js"></script>
               <script>
               new WOW().init();
               </script>
@@ -28,34 +76,47 @@
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
-        
 
         <div class="form">
          
           <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
+          <form action="" method="POST" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
               </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                 <div class="validation"></div>
               </div>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="Subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
               <div class="validation"></div>
             </div>
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <textarea class="form-control" name="Messages" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center" style="margin-bottom: 100px;"><button type="submit" class="btn btn-light">Send Message</button></div>
+            <div class="text-center" style="margin-bottom: 100px;"><button type="submit" name="submit" class="btn btn-light">Send Message</button></div>
           </form>
         </div>
 
+        <?php
+ if(isset($_POST['submit'])) {
+  $query="INSERT INTO contact_us(ID, Name, Email, Subject, Messages) VALUES ('','".$_POST['Name']."','".$_POST['Email']."','".$_POST['Subject']."','".$_POST['Messages']."')";
+
+  $hasil=mysqli_query($con,$query) or die (mysqli_error());
+  ?>
+  <script>
+    alert("data sukses ditambahkan");
+    window.location="Cs Contact.php";
+  </script>
+
+<?php
+ }
+ ?>
       </div>
     </section><!-- #contact -->
 <div class="row contact-info">

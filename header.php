@@ -1,6 +1,6 @@
 <header>
       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light ">
-      <a class="navbar-brand p-0" href="#">
+      <a class="navbar-brand p-0" href="index.php">
        <img src="img/logofont.svg" width="150" height="auto" class="d-inline-block align-top" alt="">
       </a>
           <!--<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
@@ -10,16 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="productlist.php">Product</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="quality.html">Quality</a>
+              <a class="nav-link" href="quality.php">Quality</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Cs Contact.html">Contact Us</a>
+              <a class="nav-link" href="Cs Contact.php">Contact Us</a>
             </li>
           </ul>
           <ul class="navbar-nav navbar-right">
