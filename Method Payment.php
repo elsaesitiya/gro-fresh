@@ -1,3 +1,6 @@
+<?php
+require_once('system/koneksi.php')
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,11 +11,15 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Gro-Fresh</title>
-    <?php include 'head.php'; ?>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/carousel.css" rel="stylesheet">
+    <script src="assets/js/bootsrap.js"></script>
 
   </head>
   <body>
-    <?php include 'header user.php'; ?>
+    <?php include 'header.php'; ?>
 
 <div class="container">
   <div class="row pt-3">

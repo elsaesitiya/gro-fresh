@@ -143,7 +143,7 @@
 						</div> <!-- row.// -->
 						<hr>
             
-						<a href="Method Payment.html" class="btn btn-md btn-success text-uppercase"> Buy now </a>
+						<a href="Method Payment.php" class="btn btn-md btn-success text-uppercase"> Buy now </a>
             <form action="system/cart.php" method="post">
 						<a><input type="submit" name="submit" class="btn btn-md btn-outline-success text-uppercase"> </a>
           </form>

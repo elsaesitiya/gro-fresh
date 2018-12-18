@@ -51,7 +51,7 @@
 								<dl class="param param-inline">
 								  <dt>Quantity: </dt>
 								  <dd>
-                    <input style="width:90px;  float: left; margin-right: 20px;" id="qty" name="qty" class="form-control" placeholder="Quantity" type="number" max="<?=$rows -> stok;?>">
+                    <input style="width:90px;  float: left; margin-right: 20px;" id="qty" name="qty" class="form-control" placeholder="Quantity" type="number" min="1" max="<?=$rows -> stok;?>">
                     
 								  </dd>
                   <span>/<?=$rows -> stok;?></span> 
@@ -63,7 +63,7 @@
 						</div> <!-- row.// -->
 						<hr>
             
-						<a href="Method Payment.html" class="btn btn-md btn-success text-uppercase"> Buy now </a>
+						<a href="Method Payment.php" class="btn btn-md btn-success text-uppercase"> Buy now </a>
             <form action="system/cart.php" method="post">
 						<a><input type="submit" name="submit" class="btn btn-md btn-outline-success text-uppercase"> </a>
           </form>
