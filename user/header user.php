@@ -1,4 +1,9 @@
-<?php include '../system/koneksi.php' ?>
+<?php 
+
+if (!isset($_SESSION['email'])){
+include '../system/koneksi.php';
+}
+ ?>
 <header>
       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <a class="navbar-brand" href="index.php"><img src="../img/logofont.svg" width="150" height="auto" class="d-inline-block align-top" alt=""></a>
@@ -21,17 +26,13 @@
               <a class="nav-link" href="CS Contact.php">Contact Us</a>
             </li>
           </ul>
-<?php
-   $query = mysqli_query($con,"SELECT * FROM pelanggan");
-   $record = mysqli_fetch_array($query);
-   
-   ?>
              <div class="dropdown">
-            USER - <?php echo $record['nama_pelanggan']; ?>  
+            USER - <?=$_SESSION['email']; ?>  
           <button class="dropbtn"><img src="../img/user2.png"></button>
           <div class="dropdown-content">
             <a href="indexlogin.php"> Profile </a>
             <a href="history payment.php"> History </a>
+            <a href="../system/logout.php"> LogOut </a>
           </div>  
         </div>
       </nav>
