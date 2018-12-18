@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2018 at 11:34 AM
+-- Generation Time: Dec 18, 2018 at 03:41 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -52,6 +52,28 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`kd_cart`, `kd_produk`, `qty`, `total`) VALUES
 ('2', '2', 20, '2000.0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `ID` int(6) NOT NULL,
+  `Name` varchar(60) NOT NULL,
+  `Email` varchar(20) NOT NULL,
+  `Subject` varchar(20) NOT NULL,
+  `Messages` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`ID`, `Name`, `Email`, `Subject`, `Messages`) VALUES
+(1, 'rino', 'rino@gmail.com', 'coba', ''),
+(2, 'rino', 'rino@gmail.com', 'abc', 'asd');
 
 -- --------------------------------------------------------
 
@@ -288,6 +310,12 @@ ALTER TABLE `cart`
   ADD KEY `kd_produk` (`kd_produk`);
 
 --
+-- Indexes for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
@@ -383,6 +411,12 @@ ALTER TABLE `transaksi`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `contact_us`
+--
+ALTER TABLE `contact_us`
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `map`
