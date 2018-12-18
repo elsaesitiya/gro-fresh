@@ -1,3 +1,7 @@
+<?php 
+require_once('../system/koneksi.php');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,52 +26,57 @@
       <div class="col-sm-7">
         <div class="p-3 bg-light text-dark">
       
-        <form>
+  <form action="" method="POST">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
+    <input type="text" class="form-control" placeholder="First name" name="firstname">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
+    <input type="text" class="form-control" placeholder="Last name" name="lastname">
     </div>
   </div>
-</form>
-
-<form>
   <div class="form-group">
     <label for="formGroupExampleInput"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Phone Number">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Phone Number" name="phonenumber">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Province">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Province" name="province">
   </div>
-</form>
-
-<form>
   <div class="form-group">
     <label for="formGroupExampleInput"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="City" name="city">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Districts">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Districts" name="district">
   </div>
-</form>
-
 <div class="form-group">
     <label for="formGroupExampleInput2"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Zip Code">
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Zip Code" name="zipcode">
   </div>
-</form>
-
 <div class="form-group">
     <label for="exampleFormControlTextarea1"></label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Address" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Address" rows="3" name="address"></textarea>
   </div>
+  <div class="text-center" style="margin-bottom: 100px;"><button type="submit" class="btn btn-danger" name="submit">SAVE</input>
+</div>
 </form>
-<div class="p-3 bg-light text-dark"><button type="button" class="btn btn-danger">SAVE</button></div>
-                  
+
+    <?php
+ if(isset($_POST['submit'])) {
+  $query="INSERT INTO payment(kd_payment, firstname, lastname, province, city, district, zipcode, address) VALUES ('','".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['province']."','".$_POST['city']."','".$_POST['district']."','".$_POST['zipcode']."','".$_POST['address']."')";
+
+  $hasil=mysqli_query($con,$query) or die (mysqli_error());
+  ?>
+  <script>
+    alert("data sukses ditambahkan");
+    window.location="productlist.php";
+  </script>
+
+<?php
+ }
+ ?>              
         </div>
 
 
@@ -88,6 +97,7 @@
     </div>
         
         </div>
+
 
                   <div class="p-3 bg-light text-dark"><button type="button" class="btn btn-danger"><a a href="On Stat Prog.html" style="text-decoration: none; color: white;">CONFIRMATION</a></button></div>
 
