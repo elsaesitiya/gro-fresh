@@ -13,75 +13,51 @@
   </head>
   <body>
 
-  	<?php include 'header admin.php'; ?>
+    <?php include 'header admin.php'; ?>
     
     <main role="main">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
       </div>
-      <div class="container-fluid marketing">
-        <div class="row justify-content-lg-center">
 
-          <div class="col-lg-7">
-            <h3>Produk</h3>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Kode</th>
-                  <th scope="col">Kategori</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Deskripsi</th>
-                  <th scope="col">Stok</th>
-                  <th scope="col">Harga</th>
-                  <th colspan="2" scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                   $query = mysqli_query($con,"SELECT * FROM produk");
-                   while ($record = mysqli_fetch_array($query)) {
-                ?>
-                <tr>
-                  <th scope="row"><?php echo $record['kd_produk']; ?></th>
-                  <td><?php echo $record['kd_kategori']; ?></td>
-                  <td><?php echo $record['nama_produk']; ?></td>
-                  <td>@<?php echo $record['deskripsi']; ?></td>
-                  <td><?php echo $record['stok']; ?></td>
-                  <td><?php echo $record['harga']; ?></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-trash"></i></a></td>
-                </tr>
-                <?php } ?>
-              </tbody>
-            </table>
-            <a href="tambahproduk.php"><button type="button-right" class="btn btn-primary">Add Product</button></a>
-          </div>
+<form action="" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Kode</label>
+    <input name="kode" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Kode Kategori</label>
+    <select name="kd_kategori">
+          <?php
+          $q = "select * from kategori";
+          $res = mysqli_query($con, $q);
 
-          <div class="col-lg-4">
-            <h3>Kategori</h3>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Kode</th>
-                  <th scope="col">Nama</th>
-                  <th colspan="2" scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                   $query = mysqli_query($con,"SELECT * FROM kategori");
-                   while ($record = mysqli_fetch_array($query)) {
-                ?>
-                <tr>
-                  <th scope="row"><?php echo $record['kd_kategori']; ?></th>
-                  <td><?php echo $record['nama_kategori']; ?></td>
-                  <td><a href="produksys.php?kd_kategori=<?php echo $record['kategori']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_kategori=<?php echo $record['kd_kategori']?>" class="btn"><i class="fa fa-trash"></i></a></td>
-                </tr>
-                <?php } ?>
-              </tbody>
-            </table>
-            <button type="button" class="btn btn-primary">Add Category</button>
-          </div>
+          while ($row = mysqli_fetch_assoc($res)) {
+          ?>
+          <option value="<? echo $row['kd_kategori']; ?>" > <?php echo $row['nama_kategori']; ?> </option>
+          <?php
+          }
+          ?>
+        </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Nama Produk</label>
+    <input name="produk" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Deskripsi</label>
+    <input name="deskripsi" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Stok</label>
+    <input name="stok" type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Harga</label>
+    <input name="harga" type="number" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
         </div>
 
         <hr class="featurette-divider"> 
@@ -113,3 +89,18 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+<?php
+ if(isset($_POST['submit'])) {
+  $query="INSERT INTO produk(kd_produk, kd_kategori, nama_produk, deskripsi, stok, harga) VALUES ('','".$_POST['kd_kategori']."','".$_POST['produk']."','".$_POST['password']."','".$_POST['deskripsi']."','".$_POST['stok']."','".$_POST['harga']."')";
+
+  $hasil=mysqli_query($con,$query) or die (mysqli_error());
+  ?>
+  <script>
+    alert("data sukses ditambahkan");
+    window.location="detailproduct.php";
+  </script>
+  <?php
+ }
+ ?>
