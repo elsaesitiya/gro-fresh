@@ -47,8 +47,8 @@
                   <td>@<?php echo $record['deskripsi']; ?></td>
                   <td><?php echo $record['stok']; ?></td>
                   <td><?php echo $record['harga']; ?></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-trash"></i></a></td>
+                  <td><a href="delpro.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-edit"></i></a></td>
+                  <td><a href="delpro.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <?php } ?>
               </tbody>
@@ -74,13 +74,13 @@
                 <tr>
                   <th scope="row"><?php echo $record['kd_kategori']; ?></th>
                   <td><?php echo $record['nama_kategori']; ?></td>
-                  <td><a href="produksys.php?kd_kategori=<?php echo $record['kategori']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_kategori=<?php echo $record['kd_kategori']?>" class="btn"><i class="fa fa-trash"></i></a></td>
+                  <td><a href="updatekat.php?kd_kategori=<?php echo $record['kd_kategori']?>" class="btn"><i class="fa fa-edit"></i></a></td>
+                  <td><a href="delkat.php?kd_kategori=<?php echo $record['kd_kategori']?>" class="btn"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <?php } ?>
               </tbody>
             </table>
-            <button type="button" class="btn btn-primary">Add Category</button>
+            <a href="tambahkat.php"><button type="button" class="btn btn-primary">Add Category</button></a>
           </div>
         </div>
 

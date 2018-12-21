@@ -22,61 +22,35 @@
         <div class="row justify-content-lg-center">
 
           <div class="col-lg-7">
-            <h3>Add Produk</h3>
-<form action="" method="POST">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Kode</label>
-    <input name="kode" type="text" class="form-control"  aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Kode Kategori</label>
-    <select name="kd_kategori">
-          <?php
-          $q = "select * from kategori";
-          $res = mysqli_query($con, $q);
-
-          while ($row = mysqli_fetch_assoc($res)) {
-          ?>
-          <option value="<? echo $row['kd_kategori']; ?>" > <?php echo $row['nama_kategori']; ?> </option>
-          <?php
-          }
-          ?>
-        </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Nama Produk</label>
-    <input name="produk" type="text" class="form-control"  placeholder="Nama Produk">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Deskripsi</label>
-    <input name="deskripsi" type="text" class="form-control"  placeholder="Deskripsi">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Stok</label>
-    <input name="stok" type="number" class="form-control"  placeholder="Stok">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Harga</label>
-    <input name="harga" type="number" class="form-control" placeholder="Harga">
-  </div>
-  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-        </div>
+            <h3>Update Produk</h3>
 <?php
+    $query = mysqli_query($con, "Select * from kategori where kd_kategori = '".$_GET['kd_kategori']."'");
+    while ($row = mysqli_fetch_array($query)) {
+?>
 
- if(isset($_POST['submit'])) {
-  $query = "insert INTO produk(kd_produk, kd_kategori, nama_produk, deskripsi, stok, harga) 
-  VALUES ('','".$_POST['kd_kategori']."','".$_POST['produk']."','".$_POST['deskripsi']."','".$_POST['stok']."','".$_POST['harga']."')";
-  $hasil=mysqli_query($con, $query) or die (mysqli_error());;
-  ?>
-  <script>
-    alert("data sukses ditambahkan");
-    window.location="product.php";
-  </script>
-  <?php
- }
- ?>
+            <form action="" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Kode</label>
+                  <input name="kd_kategori" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="<?php echo $row['kd_kategori'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Nama Kategori</label>
+                  <input name="nama_kategori" type="text" class="form-control"  laceholder="<?php echo $row['nama_kategori'] ?>">
+                </div>
+                <button type="submit" name="update" class="btn btn-primary">Update</button>
+                <?php } ?>
+            </form>
+          </div>
+
+<?php
+    if(isset($_POST['update'])){
+      $quer="UPDATE kategori SET kd_kategori ='".$_POST['kd_kategori']."', nama_kategori = '".$_POST['nama_kategori']."' WHERE kd_kategori ='".$_POST['kd_kategori']."'";
+     $q= mysqli_query($con, $quer) or die (mysqli_error());
+   ?>
+
+    <script>alert("sukses diperbarui"); window.location='product.php';</script>
+   <?php } ?>
+
         <hr class="featurette-divider"> 
     </main>
 
@@ -106,4 +80,3 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-

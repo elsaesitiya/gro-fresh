@@ -26,38 +26,11 @@
 <form action="" method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Kode</label>
-    <input name="kode" type="text" class="form-control"  aria-describedby="emailHelp">
+    <input name="kd_kategori" type="text" class="form-control"  aria-describedby="emailHelp">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Kode Kategori</label>
-    <select name="kd_kategori">
-          <?php
-          $q = "select * from kategori";
-          $res = mysqli_query($con, $q);
-
-          while ($row = mysqli_fetch_assoc($res)) {
-          ?>
-          <option value="<? echo $row['kd_kategori']; ?>" > <?php echo $row['nama_kategori']; ?> </option>
-          <?php
-          }
-          ?>
-        </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Nama Produk</label>
-    <input name="produk" type="text" class="form-control"  placeholder="Nama Produk">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Deskripsi</label>
-    <input name="deskripsi" type="text" class="form-control"  placeholder="Deskripsi">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Stok</label>
-    <input name="stok" type="number" class="form-control"  placeholder="Stok">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Harga</label>
-    <input name="harga" type="number" class="form-control" placeholder="Harga">
+    <label for="exampleInputPassword1">Nama Kategori</label>
+    <input name="nama_kategori" type="text" class="form-control"  placeholder="Nama Produk">
   </div>
   <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -66,8 +39,8 @@
 <?php
 
  if(isset($_POST['submit'])) {
-  $query = "insert INTO produk(kd_produk, kd_kategori, nama_produk, deskripsi, stok, harga) 
-  VALUES ('','".$_POST['kd_kategori']."','".$_POST['produk']."','".$_POST['deskripsi']."','".$_POST['stok']."','".$_POST['harga']."')";
+  $query = "insert INTO kategori(kd_kategori, nama_kategori) 
+  VALUES ('".$_POST['kd_kategori']."','".$_POST['nama_kategori']."')";
   $hasil=mysqli_query($con, $query) or die (mysqli_error());;
   ?>
   <script>

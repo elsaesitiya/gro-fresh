@@ -32,7 +32,7 @@
                   <th scope="col">Alamat</th>
                   <th scope="col">Password</th>
                   <th scope="col">Phone</th>
-                  <th colspan="2" scope="col">Action</th>
+                  <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,13 +47,11 @@
                   <td>@<?php echo $record['alamat']; ?></td>
                   <td><?php echo $record['password']; ?></td>
                   <td><?php echo $record['no_tlp']; ?></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-trash"></i></a></td>
+                  <td><a href="delpel.php?kd_pelanggan=<?php echo $record['kd_pelanggan']?>" class="btn"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <?php } ?>
               </tbody>
             </table>
-            <button type="button-right" class="btn btn-primary">Add Product</button>
           </div>
 
           

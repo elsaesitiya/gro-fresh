@@ -1,11 +1,3 @@
-<?php include '../system/koneksi.php';
-$kd_produk = $_GET['kd_produk'];
-	mysqli_query($con, "DELETE from produk where kd_produk='".$_GET['kd_produk']."'");
-?>
-	<script>alert("sukses"); window.location='admin_data.php';</script>
-
-
-
 <?php include '../system/koneksi.php'; ?>
 <!doctype html>
 <html lang="en">
@@ -21,76 +13,43 @@ $kd_produk = $_GET['kd_produk'];
   </head>
   <body>
 
-  	<?php include 'header admin.php'; ?>
+    <?php include 'header admin.php'; ?>
     
     <main role="main">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
       </div>
-      <div class="container-fluid marketing">
+<div class="container-fluid marketing">
         <div class="row justify-content-lg-center">
 
           <div class="col-lg-7">
-            <h3>Produk</h3>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Kode</th>
-                  <th scope="col">Kategori</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Deskripsi</th>
-                  <th scope="col">Stok</th>
-                  <th scope="col">Harga</th>
-                  <th colspan="2" scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                   $query = mysqli_query($con,"SELECT * FROM produk");
-                   while ($record = mysqli_fetch_array($query)) {
-                ?>
-                <tr>
-                  <th scope="row"><?php echo $record['kd_produk']; ?></th>
-                  <td><?php echo $record['kd_kategori']; ?></td>
-                  <td><?php echo $record['nama_produk']; ?></td>
-                  <td>@<?php echo $record['deskripsi']; ?></td>
-                  <td><?php echo $record['stok']; ?></td>
-                  <td><?php echo $record['harga']; ?></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_produk=<?php echo $record['kd_produk']?>" class="btn"><i class="fa fa-trash"></i></a></td>
-                </tr>
+            <h3>Update Produk</h3>
+<?php
+    $query = mysqli_query($con, "Select * from pelanggan where kd_kategori = '".$_GET['kd_kategori']."'");
+    while ($row = mysqli_fetch_array($query)) {
+?>
+
+            <form action="" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Kode</label>
+                  <input name="kd_kategori" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="<?php echo $row['kd_kategori'] ?>">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Nama Kategori</label>
+                  <input name="nama_kategori" type="text" class="form-control"  laceholder="<?php echo $row['nama_kategori'] ?>">
+                </div>
+                <button type="submit" name="update" class="btn btn-primary">Update</button>
                 <?php } ?>
-              </tbody>
-            </table>
-            <button type="button-right" class="btn btn-primary">Add Product</button>
+            </form>
           </div>
 
-          <div class="col-lg-4">
-            <h3>Kategori</h3>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Kode</th>
-                  <th scope="col">Nama</th>
-                  <th colspan="2" scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                   $query = mysqli_query($con,"SELECT * FROM kategori");
-                   while ($record = mysqli_fetch_array($query)) {
-                ?>
-                <tr>
-                  <th scope="row"><?php echo $record['kd_kategori']; ?></th>
-                  <td><?php echo $record['nama_kategori']; ?></td>
-                  <td><a href="produksys.php?kd_kategori=<?php echo $record['kategori']?>" class="btn"><i class="fa fa-edit"></i></a></td>
-                  <td><a href="produksys.php?kd_kategori=<?php echo $record['kd_kategori']?>" class="btn"><i class="fa fa-trash"></i></a></td>
-                </tr>
-                <?php } ?>
-              </tbody>
-            </table>
-            <button type="button" class="btn btn-primary">Add Category</button>
-          </div>
-        </div>
+<?php
+    if(isset($_POST['update'])){
+      $quer="UPDATE kategori SET kd_kategori ='".$_POST['kd_kategori']."', nama_kategori = '".$_POST['nama_kategori']."' WHERE kd_kategori ='".$_POST['kd_kategori']."'";
+     $q= mysqli_query($con, $quer) or die (mysqli_error());
+   ?>
+
+    <script>alert("sukses diperbarui"); window.location='product.php';</script>
+   <?php } ?>
 
         <hr class="featurette-divider"> 
     </main>
