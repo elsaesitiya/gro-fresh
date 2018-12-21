@@ -1,7 +1,14 @@
+<?php 
+session_start();
+if (!isset($_SESSION['kd_admin'])){
+include '../system/koneksi.php';
+}
+ ?>
+
 <header>
       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
         <a class="navbar-brand" href="#"><img src="../img/logofont.svg" width="150" height="auto" class="d-inline-block align-top" alt=""></a>
-          <!--<img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
+          <!--<img src="img/logo.png " width="30" height="30" class="d-inline-block align-top" alt="">-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,12 +28,9 @@
             </li>
           </ul>
              <div class="dropdown">
-            ADMIN - Ray Reysandi  
+            ADMIN - <?=$_SESSION['kd_admin']; ?>  
           <button class="dropbtn"><img src="../img/user2.png"></button>
-          <div class="dropdown-content">
-            <a href="indexlogin.html"> Profile </a>
-            <a href="history payment.html"> History </a>
-          </div>  
+          
         </div>
       </nav>
     </header>

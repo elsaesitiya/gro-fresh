@@ -1,7 +1,15 @@
-<?php include '../system/koneksi.php' ?>
+<?php 
+session_start();
+if (!isset($_SESSION['kd_admin'])){
+include '../system/koneksi.php';
+
+} 
+
+?>
+
 <!doctype html>
 <html lang="en">
-  <head>
+  <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -13,152 +21,33 @@
   </head>
   <body>
 
-  	<?php include 'header admin.php'; ?>
+  	
     
     <main role="main">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="first-slide" src="../img/header2.jpg" alt="First slide">
-            <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>From Earth</h1>
-                <p>If we go on using the Earth uncaringly and without replenishing it, then we are just greedy consumers.</p>
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="second-slide" src="../img/header3.jpg" alt="Second slide">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Healty Family</h1>
-                <p>Health is a state of complete harmony of the body, mind and spirit. When one is free from physical disabilities and mental distractions, the gates of the soul open </p>
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="third-slide" src="../img/header1.jpg" alt="Third slide">
-            <div class="container">
-              <div class="carousel-caption text-right">
-                <h1>One more for good measure.</h1>
-                <p>We’re so much more than just a grocery store, we are contributing members of our communities.</p>
-                <p><a class="btn btn-lg btn-success" href="#" role="button">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        
       </div>
 
       <div class="container-fluid marketing">
-        <div class="row">
-          <div class="col-lg-4">
-            <a href="howtoorder.html"><span class="label label-default"><h4 class="center">How to Order</h4></span></a>
-          </div>
-          <div class="col-lg-4">
-            <a href="shipping.html"><span class="label label-default"><h4 class="center">Shipping</h4></span></a>
-          </div>
-          <div class="col-lg-4">
-            <a href="guerentee.html"><span class="label label-default"><h4 class="center">Guarantee</h4></span></a>
-          </div>
-        </div>
-        <hr class="featurette-divider">
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-          <div class="col-lg-4">
-            <a href="#"><img src="img/1.jpg" alt="" class="img-thumbnail img-responsive"></a>
-          </div>
-           <div class="col-lg-4">
-            <a href="#"><img src="img/2.png" alt="" class="img-thumbnail img-responsive"></a>
-          </div>
-           <div class="col-lg-4">
-            <a href="#"><img src="img/3.jpg" alt="" class="img-thumbnail img-responsive"></a>
-          </div>
-        </div>
-
-        <h3>Best Seller</h3>
-        <br>
-          <div class="row">
-            <div class="col-lg-3">
-              <a href="#"><img src="https://drive.google.com/uc?id=1Oe1jCXAgbP7mUF4W43yq9sOjnBo4hv7D" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="https://drive.google.com/uc?id=1KXyMHnOcp_YY-RJi5UsmapI9T7ixxdVA" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="https://drive.google.com/uc?id=1J3ZL7JKg-C-Ox5DINK2OJAcTW01zKAsK" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-             <a href="#"><img src="https://drive.google.com/uc?id=1Q6gKORPURQgNXGFBvBOBWB5lzmoKfab7" class="img-thumbnail img-responsive"></a>
-            </div>
-          </div>
-
-        <hr>
-          <h3>Last Update</h3>
-          <br>
-          <div class="row">
-            <div class="col-lg-3 ">
-              <a href="#"><img src="https://drive.google.com/uc?id=1KXyMHnOcp_YY-RJi5UsmapI9T7ixxdVA" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="https://drive.google.com/uc?id=1BbNGZCaB3WeSZLpuEkRz2KAk-zCpha9q" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-              <a href="#"><img src="https://drive.google.com/uc?id=1HMYtassr-d8QzX6TL1sUsqmkqSnmRGdi" class="img-thumbnail img-responsive"></a>
-            </div>
-            <div class="col-lg-3">
-             <a href="#"><img src="https://drive.google.com/uc?id=1Hx0LsHlLsQvoBXg08oI8__w2tTtB2-me" class="img-thumbnail img-responsive"></a>
-            </div>
-          </div>
-          <hr class="featurette-divider">
-        </div>
-
-          <div id="myCarousel" class="carousel slide">
-            <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="first-slide" src="../img/news.jpg" alt="First slide">
-            <div class="container">
-              <div class="carousel-caption text-center">
-
-                <h1 style="background: #00000078; margin-bottom: 0px; ">News Letter</h1>
-                <p style="background: #00000078;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <div class="col-md-12">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email">
-                    <span class="input-group-btn">
-                      <button class="btn btn-success" type="button">Suubcribe</button>
-                    </span>
-                  </div>
+        <div class="row justify-content-md-center text-center">
+          
+          <div class="col-lg-2">
+            <h2>Login Admin</h2>
+            <hr class="featurette-divider"> 
+            <form action="../system/login_admin.php" method="POST">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="nama_admin" aria-describedby="emailHelp" placeholder="Username">
                 </div>
-              </div>
-            </div>
+                <div class="form-group">
+                  <input type="password" name="kd_admin" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <hr class="featurette-divider"> 
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
           </div>
+        </div>
+        
 
-    
-          <?php
-            $query= mysqli_query($con,"SELECT * FROM map WHERE kd_map = 2");
-            $data=mysqli_fetch_array($query) 
-             ?>  
-          <div id="map">
-              <iframe src="<?php echo $data['latlong'];?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-
-          <hr class="featurette-divider">
-          <?php include 'footer.php'; ?>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
